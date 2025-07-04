@@ -58,10 +58,3 @@ O modelo é avaliado utilizando as seguintes métricas:
 - Implementar **Ajuste de Hiperparâmetros** usando técnicas como **GridSearchCV** ou **RandomizedSearchCV**.
 - **Análise de Feature Importance** para entender quais variáveis mais influenciam a previsão do churn.
 
-## Contribuição
-
-Se você deseja contribuir para o projeto, fique à vontade para fazer um fork, abrir issues ou enviar pull requests. Todas as contribuições são bem-vindas!
-
-## Licença
-
-Este projeto está licenciado sob a licença MIT. Consulte o arquivo LICENSE para mais detalhes.
