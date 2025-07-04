@@ -14,6 +14,8 @@ Este projeto utiliza Machine Learning para prever o churn (cancelamento de plano
 - **Numpy**: Biblioteca para operações numéricas e geração de dados aleatórios.
 - **Scikit-learn**: Biblioteca de Machine Learning para criação e treinamento do modelo.
 - **Matplotlib** e **Seaborn**: Bibliotecas para visualização de dados.
+- **RandomizedSearchCV**: Técnica para otimização de hiperparâmetros.
+- **GradientBoostingClassifier** e **RandomForestClassifier**: Modelos de Machine Learning utilizados para prever o churn.
 
 ## Como Rodar
 
@@ -35,11 +37,15 @@ Prever quais usuários de uma plataforma de streaming têm maior chance de cance
 2. **Pré-processamento**:
    - **Transformação de variáveis categóricas**: Variáveis como gênero, tipo de assinatura e gênero do conteúdo são convertidas em valores numéricos.
    - **Normalização**: Algumas variáveis contínuas, como idade e horas assistidas, são normalizadas para garantir que todas as variáveis estejam na mesma escala.
-3. **Modelo de Machine Learning**: O **Random Forest Classifier** é utilizado para prever o churn dos usuários.
-4. **Avaliação do Modelo**: O modelo é avaliado utilizando:
+3. **Modelos de Machine Learning**:
+   - **Random Forest Classifier**: Utilizado inicialmente para prever o churn.
+   - **Gradient Boosting Classifier**: Testado também para comparar a performance e melhorar os resultados.
+4. **Ajuste de Hiperparâmetros**: Usamos **`RandomizedSearchCV`** para otimizar os parâmetros dos modelos, como `n_estimators`, `max_depth`, `min_samples_split` e outros, buscando a melhor configuração possível.
+5. **Avaliação do Modelo**: O modelo é avaliado utilizando:
    - **Acurácia**: Para medir a precisão do modelo.
    - **Relatório de Classificação**: Com as métricas de precisão, recall e F1-score.
    - **Matriz de Confusão**: Para visualizar os acertos e erros do modelo.
+   - **Importância das Variáveis**: Análise de quais variáveis mais influenciam a previsão do churn.
 
 ## Resultados
 
@@ -53,8 +59,11 @@ O modelo é avaliado utilizando as seguintes métricas:
 
 ## Melhorias Futuras
 
-- Experimentar diferentes modelos de Machine Learning, como **Gradient Boosting** ou **XGBoost**, para melhorar o desempenho.
+- Experimentar diferentes modelos de Machine Learning, como **XGBoost**, **Logistic Regression**, e **Neural Networks**, para melhorar o desempenho.
 - Testar técnicas de **balanceamento de classes**, como **SMOTE**, caso o churn esteja desbalanceado.
-- Implementar **Ajuste de Hiperparâmetros** usando técnicas como **GridSearchCV** ou **RandomizedSearchCV**.
-- **Análise de Feature Importance** para entender quais variáveis mais influenciam a previsão do churn.
+- Implementar **Ajuste de Hiperparâmetros** mais avançado utilizando **GridSearchCV**.
+- Realizar **análise de Feature Importance** para entender quais variáveis mais influenciam a previsão do churn.
 
+## Observações Finais
+
+A previsão de churn é uma tarefa importante para a retenção de clientes, e com a melhoria contínua no modelo, podemos fornecer insights valiosos para estratégias de **retenção de usuários** e **otimização de planos de assinatura**.
